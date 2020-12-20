@@ -1,0 +1,34 @@
+2020-12-20 14:48:33,414 15706 [main] WARN  o.s.boot.StartupInfoLogger - InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-12-20 14:48:38,421 20713 [main] INFO  c.ecommerce.litil.LitilApplication - Starting LitilApplication on snambi-mbp.local with PID 38360 (/Users/snambi/personal2/litil-groceries/target/classes started by snambi in /Users/snambi/personal2/litil-groceries)
+2020-12-20 14:48:38,422 20714 [main] INFO  c.ecommerce.litil.LitilApplication - The following profiles are active: dev
+2020-12-20 14:48:39,075 21367 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-20 14:48:39,157 21449 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74ms. Found 15 JPA repository interfaces.
+2020-12-20 14:48:39,835 22127 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9090 (http)
+2020-12-20 14:48:39,850 22142 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2020-12-20 14:48:39,852 22144 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-20 14:48:39,852 22144 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-20 14:48:39,990 22282 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-20 14:48:39,991 22283 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1514 ms
+2020-12-20 14:48:40,163 22455 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-12-20 14:48:40,166 22458 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-20 14:48:47,000 29292 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-12-20 14:48:47,049 29341 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-20 14:48:47,093 29385 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-20 14:48:47,232 29524 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-20 14:48:47,344 29636 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-12-20 14:48:48,437 30729 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-20 14:48:48,444 30736 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-20 14:48:49,586 31878 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public void com.ecommerce.litil.twilio.TwilioInitializer.init()
+2020-12-20 14:48:49,590 31882 [main] INFO  c.e.litil.twilio.TwilioInitializer - Twilio initialized ... with account sid AC787d3ce0efdb62a91ad5e5526e8af32d 
+2020-12-20 14:48:50,067 32359 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-12-20 14:48:50,197 32489 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-20 14:48:50,332 32624 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2020-12-20 14:48:50,356 32648 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9090 (http) with context path ''
+2020-12-20 14:48:50,357 32649 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2020-12-20 14:48:50,375 32667 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-12-20 14:48:50,411 32703 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2020-12-20 14:48:50,618 32910 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getCategoriesUsingGET_1
+2020-12-20 14:48:50,656 32948 [main] INFO  c.ecommerce.litil.LitilApplication - Started LitilApplication in 32.608 seconds (JVM running for 33.11)
+2020-12-20 14:48:57,720 40012 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-20 14:48:57,723 40015 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-12-20 14:49:01,420 43712 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
