@@ -12,18 +12,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/product", produces = "application/json")
 public class ProductController {
-
-
+    
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
-
 
     @Autowired
     private ProductService productService;
 
     @Autowired
     private ProductRepository productRepository;
-    
-
 
     @GetMapping("/getCategories")
     public CategoryResponse getCategories() {
