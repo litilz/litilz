@@ -22,6 +22,7 @@ public class ProductController {
 
     @Autowired
     private ProductRepository productRepository;
+    
 
 
     @GetMapping("/getCategories")
