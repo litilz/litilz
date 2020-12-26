@@ -23,7 +23,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.ecommerce.litil"))
+                .apis(RequestHandlerSelectors.basePackage("com.ecommerce"))
                 .paths(PathSelectors.any())
                 .build()
                 .pathMapping("/")

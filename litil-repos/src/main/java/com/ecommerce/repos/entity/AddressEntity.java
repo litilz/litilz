@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Address")
+@Table(name = "address")
 @Transactional
 public class AddressEntity implements Serializable {
 

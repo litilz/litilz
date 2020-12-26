@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @XmlRootElement
 public class UserEntity implements Serializable {
 
