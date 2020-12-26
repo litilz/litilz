@@ -1,9 +1,9 @@
 //package com.ecommerce.litil;
 //
-//import com.ecommerce.litil.repository.ProductRepository;
+//import com.ecommerce.repos.repository.ProductRepository;
 //import com.ecommerce.litil.response.CategoryResponse;
 //import com.ecommerce.litil.service.ProductService;
-//import com.ecommerce.litil.util.LitilConstants;
+//import com.ecommerce.repos.util.LitilConstants;
 //import com.ecommerce.litil.vo.CategoryVO;
 //import org.junit.Assert;
 //import org.junit.Ignore;

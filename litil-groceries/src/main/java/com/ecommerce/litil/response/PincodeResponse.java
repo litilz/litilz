@@ -1,6 +1,6 @@
 package com.ecommerce.litil.response;
 
-import com.ecommerce.litil.entity.PincodeEntity;
+import com.ecommerce.repos.entity.PincodeEntity;
 
 import java.util.List;
 

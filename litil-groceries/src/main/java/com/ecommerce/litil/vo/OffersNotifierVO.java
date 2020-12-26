@@ -1,7 +1,7 @@
 package com.ecommerce.litil.vo;
 
-import com.ecommerce.litil.entity.NotificationsEntity;
-import com.ecommerce.litil.entity.OffersEntity;
+import com.ecommerce.repos.entity.NotificationsEntity;
+import com.ecommerce.repos.entity.OffersEntity;
 
 import java.util.List;
 

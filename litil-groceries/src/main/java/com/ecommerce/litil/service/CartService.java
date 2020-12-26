@@ -1,16 +1,16 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.entity.CartEntity;
-import com.ecommerce.litil.entity.ProductEntity;
-import com.ecommerce.litil.entity.UserEntity;
+import com.ecommerce.repos.entity.CartEntity;
+import com.ecommerce.repos.entity.ProductEntity;
+import com.ecommerce.repos.entity.UserEntity;
 import com.ecommerce.litil.mapper.ProductMapper;
-import com.ecommerce.litil.repository.CartRepository;
-import com.ecommerce.litil.repository.ProductRepository;
-import com.ecommerce.litil.repository.UserRepository;
+import com.ecommerce.repos.repository.CartRepository;
+import com.ecommerce.repos.repository.ProductRepository;
+import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.litil.response.BaseResponse;
 import com.ecommerce.litil.response.CartResponse;
-import com.ecommerce.litil.util.LitilConstants;
+import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.CartVO;
 import com.ecommerce.litil.vo.ProductVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +55,7 @@ public class CartService {
             cartEntity.setUser_id(userEntity);
             cartEntity.setProductid(productEntity);
             cartEntity.setQuantity(1);
+            cartEntity.setPrice(Integer.parseInt(productEntity.getSelling()));
             cartRepository.save(cartEntity);
             desc = "successfully saved data";
         }

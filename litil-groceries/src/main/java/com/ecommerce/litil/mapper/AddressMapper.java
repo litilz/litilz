@@ -1,6 +1,6 @@
 package com.ecommerce.litil.mapper;
 
-import com.ecommerce.litil.entity.AddressEntity;
+import com.ecommerce.repos.entity.AddressEntity;
 import com.ecommerce.litil.vo.AddressVO;
 import org.springframework.beans.BeanUtils;
 

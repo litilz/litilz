@@ -20,7 +20,8 @@
 	</properties>
 
 	<modules>
-		<module>litil-restaurant</module>
+		<module>litil-repos</module>
 		<module>litil-groceries</module>
-	</modules>
+		<module>litil-restaurant</module>
+    </modules>
 </project>

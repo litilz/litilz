@@ -1,12 +1,12 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.entity.HelpSupportEntity;
+import com.ecommerce.repos.entity.HelpSupportEntity;
 import com.ecommerce.litil.mapper.AboutUsMapper;
-import com.ecommerce.litil.repository.HelpSupportRepository;
+import com.ecommerce.repos.repository.HelpSupportRepository;
 import com.ecommerce.litil.request.HelpSupportRequest;
 import com.ecommerce.litil.response.HelpSupportResponse;
-import com.ecommerce.litil.util.LitilConstants;
+import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.HelpSupportVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

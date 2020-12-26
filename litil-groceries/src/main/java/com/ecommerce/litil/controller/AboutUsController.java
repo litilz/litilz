@@ -14,6 +14,8 @@ public class AboutUsController {
 
 
     private static final Logger logger = LoggerFactory.getLogger(AboutUsController.class);
+
+
     @Autowired
     AboutUsService aboutUsService;
 

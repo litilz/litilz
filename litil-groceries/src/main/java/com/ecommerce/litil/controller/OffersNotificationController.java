@@ -1,12 +1,12 @@
 package com.ecommerce.litil.controller;
 
 
-import com.ecommerce.litil.entity.NotificationsEntity;
-import com.ecommerce.litil.entity.OffersEntity;
-import com.ecommerce.litil.repository.NotificationsRepository;
-import com.ecommerce.litil.repository.OffersRepository;
+import com.ecommerce.repos.entity.NotificationsEntity;
+import com.ecommerce.repos.entity.OffersEntity;
+import com.ecommerce.repos.repository.NotificationsRepository;
+import com.ecommerce.repos.repository.OffersRepository;
 import com.ecommerce.litil.response.OffersNotifierResponse;
-import com.ecommerce.litil.util.LitilConstants;
+import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.OffersNotifierVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

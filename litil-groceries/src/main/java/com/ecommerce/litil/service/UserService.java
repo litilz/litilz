@@ -1,20 +1,18 @@
 package com.ecommerce.litil.service;
 
-import com.ecommerce.litil.entity.UserEntity;
+import com.ecommerce.repos.entity.UserEntity;
 import com.ecommerce.litil.exception.LitilException;
 import com.ecommerce.litil.mapper.UserMapper;
-import com.ecommerce.litil.repository.UserRepository;
+import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.litil.request.UserRequest;
 import com.ecommerce.litil.response.BaseResponse;
-import com.ecommerce.litil.response.LoginResponse;
 import com.ecommerce.litil.response.UserResponse;
-import com.ecommerce.litil.util.LitilConstants;
+import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -70,11 +68,11 @@ public class UserService {
     public BaseResponse getUserByPhone(String phone) {
         UserEntity response = userRepository.getUserByPhoneNumber(phone);
         if (response == null) {
-             return savePhoneNumber(phone);
+            return savePhoneNumber(phone);
         }
-        BaseResponse baseResponse = new BaseResponse ( HttpStatus.OK.name (), "Retrieved user successfully");
-        baseResponse.setObject ( response );
-        return  baseResponse;
+        BaseResponse baseResponse = new BaseResponse(HttpStatus.OK.name(), "Retrieved user successfully");
+        baseResponse.setObject(response);
+        return baseResponse;
     }
 
     private BaseResponse savePhoneNumber(String phone) {
@@ -84,12 +82,12 @@ public class UserService {
 
         try {
             userRepository.save(user);
-            BaseResponse baseResponse = new BaseResponse ( HttpStatus.CREATED.name (), "Saved User Successfully");
-            baseResponse.setObject ( user );
+            BaseResponse baseResponse = new BaseResponse(HttpStatus.CREATED.name(), "Saved User Successfully");
+            baseResponse.setObject(user);
             return baseResponse;
         } catch (Exception e) {
             logger.error("Failed to save user: {} exception: {}", phone, e);
-            return new BaseResponse ( HttpStatus.BAD_REQUEST.name (), "Failed to save user");
+            return new BaseResponse(HttpStatus.BAD_REQUEST.name(), "Failed to save user");
         }
     }
 }

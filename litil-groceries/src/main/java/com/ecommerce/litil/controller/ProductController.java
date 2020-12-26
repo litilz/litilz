@@ -1,6 +1,6 @@
 package com.ecommerce.litil.controller;
 
-import com.ecommerce.litil.repository.ProductRepository;
+import com.ecommerce.repos.repository.ProductRepository;
 import com.ecommerce.litil.response.CategoryResponse;
 import com.ecommerce.litil.response.ProductResponse;
 import com.ecommerce.litil.service.ProductService;

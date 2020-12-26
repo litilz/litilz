@@ -1,22 +1,22 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.entity.MediaCategoriesEntity;
-import com.ecommerce.litil.entity.MediaOrderEntity;
-import com.ecommerce.litil.entity.UserEntity;
 import com.ecommerce.litil.exception.LitilException;
 import com.ecommerce.litil.mapper.CategoryMapper;
 import com.ecommerce.litil.mapper.MediaOrderMapper;
-import com.ecommerce.litil.repository.MediaCategoriesRepository;
-import com.ecommerce.litil.repository.MediaOrderRepository;
-import com.ecommerce.litil.repository.UserRepository;
 import com.ecommerce.litil.request.MediaOrderRequest;
 import com.ecommerce.litil.response.CategoryResponse;
 import com.ecommerce.litil.response.MediaOrderResponse;
-import com.ecommerce.litil.twilio.TwilioService;
-import com.ecommerce.litil.util.LitilConstants;
 import com.ecommerce.litil.vo.CategoryVO;
 import com.ecommerce.litil.vo.MediaOrderVO;
+import com.ecommerce.repos.entity.MediaCategoriesEntity;
+import com.ecommerce.repos.entity.MediaOrderEntity;
+import com.ecommerce.repos.entity.UserEntity;
+import com.ecommerce.repos.repository.MediaCategoriesRepository;
+import com.ecommerce.repos.repository.MediaOrderRepository;
+import com.ecommerce.repos.repository.UserRepository;
+import com.ecommerce.repos.twilio.TwilioService;
+import com.ecommerce.repos.util.LitilConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,7 +64,7 @@ public class MediaService {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         Date now = new Date();
         synchronized (this) {
-             previousTime = System.currentTimeMillis();
+            previousTime = System.currentTimeMillis();
         }
         if (mediaOrderRequest == null || mediaOrderRequest.getMediaOrderVO() == null) {
             throw new LitilException("Invalid request object");
@@ -93,12 +93,10 @@ public class MediaService {
         for (MediaOrderEntity mEntity : mOrderList) {
             MediaOrderVO mOrdersVO = new MediaOrderVO();
             MediaOrderMapper.convertMediaOrdersEntitytoMediaOrdersVO(mOrdersVO, mEntity);
-            MediaCategoriesEntity mcategegory = mediaCategoriesRepository.findImage(mEntity.getCategory());
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date ordered = mEntity.getOrdered();
             mOrdersVO.setOrdered(dateFormat.format(ordered));
             mOrdersVO.setUser_id(user_name);
-            mOrdersVO.setImage(mcategegory.getImage());
             mVOList.add(mOrdersVO);
         }
         mediaOrderResponse.setMediaOrdersVO(mVOList);

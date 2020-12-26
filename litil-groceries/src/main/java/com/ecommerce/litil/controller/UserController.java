@@ -1,7 +1,7 @@
 package com.ecommerce.litil.controller;
 
 
-import com.ecommerce.litil.repository.UserRepository;
+import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.litil.request.UserRequest;
 import com.ecommerce.litil.response.UserResponse;
 import com.ecommerce.litil.service.UserService;

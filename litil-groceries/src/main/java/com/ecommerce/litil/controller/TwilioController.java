@@ -1,6 +1,6 @@
 package com.ecommerce.litil.controller;
 
-import com.ecommerce.litil.twilio.TwilioService;
+import com.ecommerce.repos.twilio.TwilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

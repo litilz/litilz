@@ -1,19 +1,19 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.entity.*;
 import com.ecommerce.litil.exception.LitilException;
 import com.ecommerce.litil.mapper.OrdersMapper;
 import com.ecommerce.litil.mapper.ProductMapper;
-import com.ecommerce.litil.repository.*;
 import com.ecommerce.litil.request.OrderRequest;
 import com.ecommerce.litil.response.MediaOrderResponse;
 import com.ecommerce.litil.response.OrdersListResponse;
 import com.ecommerce.litil.response.OrdersResponse;
-import com.ecommerce.litil.twilio.TwilioService;
-import com.ecommerce.litil.util.LitilConstants;
 import com.ecommerce.litil.vo.OrdersVO;
 import com.ecommerce.litil.vo.ProductVO;
+import com.ecommerce.repos.entity.*;
+import com.ecommerce.repos.repository.*;
+import com.ecommerce.repos.twilio.TwilioService;
+import com.ecommerce.repos.util.LitilConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,7 +95,7 @@ public class OrdersService {
         Date now = new Date();
 
         synchronized (this) {
-             previousTime = System.currentTimeMillis();
+            previousTime = System.currentTimeMillis();
         }
         if (orderRequest == null || orderRequest.getOrdersVO() == null) {
             throw new LitilException("Invalid request object");
@@ -111,7 +111,7 @@ public class OrdersService {
         ordersEntity.setAddress_id(aEntity);
         ordersEntity.setDate_ordered(now);
         ordersEntity.setId(previousTime);
-        ordersEntity.setQuantity ( cartList.size () );
+        ordersEntity.setQuantity(cartList.size());
         ordersRepository.save(ordersEntity);
 
         List<OrderItemEntity> orderItemEntityList = new ArrayList<>();
@@ -122,6 +122,7 @@ public class OrdersService {
             orderItemEntity.setOrder_id(orderEntity);
             orderItemEntity.setProduct_id(cList.getProductid());
             orderItemEntity.setQuantity(cList.getQuantity());
+            orderItemEntity.setPrice(cList.getPrice());
             orderItemEntityList.add(orderItemEntity);
         }
 

@@ -1,7 +1,7 @@
 package com.ecommerce.litil.mapper;
 
-import com.ecommerce.litil.entity.AboutUsEntity;
-import com.ecommerce.litil.entity.HelpSupportEntity;
+import com.ecommerce.repos.entity.AboutUsEntity;
+import com.ecommerce.repos.entity.HelpSupportEntity;
 import com.ecommerce.litil.vo.AboutUsVO;
 import com.ecommerce.litil.vo.HelpSupportVO;
 import org.springframework.beans.BeanUtils;

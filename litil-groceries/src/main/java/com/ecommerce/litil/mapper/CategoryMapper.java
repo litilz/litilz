@@ -1,7 +1,7 @@
 package com.ecommerce.litil.mapper;
 
-import com.ecommerce.litil.entity.CategoryEntity;
-import com.ecommerce.litil.entity.MediaCategoriesEntity;
+import com.ecommerce.repos.entity.CategoryEntity;
+import com.ecommerce.repos.entity.MediaCategoriesEntity;
 import com.ecommerce.litil.vo.CategoryVO;
 import org.springframework.beans.BeanUtils;
 

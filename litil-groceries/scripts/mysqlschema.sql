@@ -85,6 +85,7 @@ create TABLE `order_items` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`orderid` BIGINT NOT NULL,
 	`productid` INT NOT NULL,
+	`price` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -143,6 +144,7 @@ create TABLE `cart` (
 	`productid` INT NOT NULL,
 	`user_id` INT NOT NULL,
     `quantity` INT NOT NULL,
+    `price` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
