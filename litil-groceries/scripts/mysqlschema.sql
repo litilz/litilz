@@ -86,6 +86,7 @@ create TABLE `order_items` (
 	`orderid` BIGINT NOT NULL,
 	`productid` INT NOT NULL,
 	`price` INT NOT NULL,
+	`quantity` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 

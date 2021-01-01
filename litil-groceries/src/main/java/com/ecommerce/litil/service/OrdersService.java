@@ -150,7 +150,7 @@ public class OrdersService {
             ProductEntity pEntity = oList.getProduct_id();
             ProductMapper.convertProductEnitytoProductVO(productVO, pEntity);
             productVO.setQuantity(oList.getQuantity());
-            productVO.setSelling(oList.getProduct_id().getSelling());
+            productVO.setSelling(oList.getPrice().toString());
             orderedProductList.add(productVO);
         }
         ordersListResponse.setOrdersList(orderedProductList);
