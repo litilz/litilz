@@ -11,8 +11,7 @@ public class RestaurantsVO {
     private String categories;
     private double rating;
     private int min_order;
-    private Date estimated_delivery;
-    private String phone;
+    private String delivery_time;
     private String restaurant_loc;
 
     public int getId() {
@@ -71,20 +70,12 @@ public class RestaurantsVO {
         this.min_order = min_order;
     }
 
-    public Date getEstimated_delivery() {
-        return estimated_delivery;
+    public String getDelivery_time() {
+        return delivery_time;
     }
 
-    public void setEstimated_delivery(Date estimated_delivery) {
-        this.estimated_delivery = estimated_delivery;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setDelivery_time(String delivery_time) {
+        this.delivery_time = delivery_time;
     }
 
     public String getRestaurant_loc() {

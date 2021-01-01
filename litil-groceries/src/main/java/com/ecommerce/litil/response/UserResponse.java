@@ -1,6 +1,7 @@
 package com.ecommerce.litil.response;
 
 import com.ecommerce.litil.vo.UserVO;
+import com.ecommerce.repos.response.BaseResponse;
 
 public class UserResponse extends BaseResponse {
 

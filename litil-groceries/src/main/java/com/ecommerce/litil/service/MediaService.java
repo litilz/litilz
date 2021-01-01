@@ -1,7 +1,7 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.exception.LitilException;
+import com.ecommerce.repos.exception.LitilException;
 import com.ecommerce.litil.mapper.CategoryMapper;
 import com.ecommerce.litil.mapper.MediaOrderMapper;
 import com.ecommerce.litil.request.MediaOrderRequest;

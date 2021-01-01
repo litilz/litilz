@@ -1,5 +1,7 @@
 package com.ecommerce.litil.response;
 
+import com.ecommerce.repos.response.BaseResponse;
+
 public class FileUploadResponse extends BaseResponse {
 
     private String fileName;

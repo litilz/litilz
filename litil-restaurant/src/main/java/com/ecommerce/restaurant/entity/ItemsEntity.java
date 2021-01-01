@@ -15,12 +15,28 @@ public class ItemsEntity {
 
     @Column(name = "type")
     private String type;
+
     @Column(name = "image")
     private String image;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "category")
     private String category;
+
+    @Column(name = "quantity")
+    private int quantity;
+
+    @Column(name = "price")
+    private int price;
+
+    @Column(name = "active")
+    private Boolean active;
+
+    @JoinColumn(name = "restaurant_id",referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private RestaurantsEntity restaurant_id;
 
     public int getId() {
         return id;
@@ -60,5 +76,37 @@ public class ItemsEntity {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public RestaurantsEntity getRestaurant_id() {
+        return restaurant_id;
+    }
+
+    public void setRestaurant_id(RestaurantsEntity restaurant_id) {
+        this.restaurant_id = restaurant_id;
     }
 }

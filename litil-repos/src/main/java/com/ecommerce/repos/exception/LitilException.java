@@ -1,4 +1,4 @@
-package com.ecommerce.litil.exception;
+package com.ecommerce.repos.exception;
 
 public class LitilException extends RuntimeException {
 

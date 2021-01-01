@@ -5,7 +5,7 @@ import com.ecommerce.litil.messaging.MessageResponse;
 import com.ecommerce.litil.messaging.MessagingService;
 import com.ecommerce.litil.messaging.VerifyRequest;
 import com.ecommerce.litil.request.LoginRequest;
-import com.ecommerce.litil.response.BaseResponse;
+import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.LoginResponse;
 import com.ecommerce.litil.service.UserService;
 import org.slf4j.Logger;

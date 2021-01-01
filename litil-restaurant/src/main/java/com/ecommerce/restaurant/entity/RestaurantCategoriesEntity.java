@@ -2,10 +2,10 @@ package com.ecommerce.restaurant.entity;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "item_categories")
-public class ItemCategoryEntity {
 
+@Entity
+@Table(name = "restaurant_categories")
+public class RestaurantCategoriesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

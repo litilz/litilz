@@ -1,6 +1,7 @@
 package com.ecommerce.litil.response;
 
 import com.ecommerce.litil.vo.HelpSupportVO;
+import com.ecommerce.repos.response.BaseResponse;
 
 import java.util.List;
 

@@ -1,39 +1,56 @@
 package com.ecommerce.restaurant.service;
 
-import com.ecommerce.restaurant.entity.Restaurant_vs_itemsEntity;
+import com.ecommerce.repos.entity.UserEntity;
+import com.ecommerce.repos.exception.LitilException;
+import com.ecommerce.repos.repository.UserRepository;
+import com.ecommerce.repos.util.LitilConstants;
+import com.ecommerce.restaurant.entity.FoodCartEntity;
+import com.ecommerce.restaurant.entity.ItemsEntity;
 import com.ecommerce.restaurant.entity.RestaurantsEntity;
 import com.ecommerce.restaurant.mapper.ItemsMapper;
 import com.ecommerce.restaurant.mapper.RestaurantsMapper;
-import com.ecommerce.restaurant.repository.RestaurantRepository;
-import com.ecommerce.restaurant.repository.RestaurantVSItemsRepository;
+import com.ecommerce.restaurant.repository.FoodCartRepository;
+import com.ecommerce.restaurant.repository.ItemsRepository;
+import com.ecommerce.restaurant.repository.RestaurantsRepository;
 import com.ecommerce.restaurant.response.RestaurantResponse;
 import com.ecommerce.restaurant.response.RestaurantsResponse;
 import com.ecommerce.restaurant.vo.ItemsVO;
 import com.ecommerce.restaurant.vo.RestaurantsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class RestaurantsService {
 
     @Autowired
-    RestaurantRepository restaurantRepository;
+    RestaurantsRepository restaurantsRepository;
+
 
     @Autowired
-    RestaurantVSItemsRepository restaurantVSItemsRepository;
+    FoodCartRepository foodCartRepository;
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    ItemsRepository itemsRepository;
 
 
     public RestaurantsResponse getAll() {
         List<RestaurantsVO> restaurantVO = new LinkedList<>();
-        List<RestaurantsEntity> resEntity = restaurantRepository.findAll();
-        for (RestaurantsEntity eEntity : resEntity) {
-            if (eEntity.getActive()) {
-                RestaurantsVO resVO = new RestaurantsVO();
-                RestaurantsMapper.convertRestaurantEntitytoRestaurantVO(eEntity, resVO);
-                restaurantVO.add(resVO);
+        List<RestaurantsEntity> resEntity = restaurantsRepository.findAll();
+        if (resEntity.isEmpty()) {
+            throw new LitilException("No Restaurents Found !!!");
+        } else {
+            for (RestaurantsEntity eEntity : resEntity) {
+                if (eEntity.getActive()) {
+                    RestaurantsVO resVO = new RestaurantsVO();
+                    RestaurantsMapper.convertRestaurantEntitytoRestaurantVO(eEntity, resVO);
+                    restaurantVO.add(resVO);
+                }
             }
         }
         RestaurantsResponse restaurantsResponse = new RestaurantsResponse();
@@ -41,24 +58,39 @@ public class RestaurantsService {
         return restaurantsResponse;
     }
 
-    public RestaurantResponse displayMenu(String restaurantname) {
+    public RestaurantResponse displayMenu(String restaurantName, String user_name) {
+        RestaurantsEntity resEntity = restaurantsRepository.findRestaurant(restaurantName);
+        UserEntity uEntity = userRepository.findByUserId(user_name);
+        RestaurantsVO resVO = new RestaurantsVO();
+        RestaurantsMapper.convertRestaurantEntitytoRestaurantVO(resEntity, resVO);
+        List<ItemsEntity> itemsList = itemsRepository.findAll(resEntity);
         RestaurantResponse restaurantResponse = new RestaurantResponse();
-
-        List<Restaurant_vs_itemsEntity> resVSitems = restaurantVSItemsRepository.findAll();
-        RestaurantsEntity resEntity = restaurantRepository.findRestaurant(restaurantname);
-        List<ItemsVO> itemVo = new LinkedList<>();
-
-        for (Restaurant_vs_itemsEntity resvsItems : resVSitems) {
-            ItemsVO iVo = new ItemsVO();
-            ItemsMapper.convertItemEntitytoItemVO(resvsItems.getItem_id(), iVo);
-            iVo.setPrice(resvsItems.getPrice());
-            iVo.setCategory(resvsItems.getItem_id().getCategory());
-            iVo.setQuantity(resvsItems.getQuantity());
-            itemVo.add(iVo);
+        List<FoodCartEntity> fCEntity = foodCartRepository.findCart(uEntity);
+        Map<Integer, Integer> map = new TreeMap<>();
+        for (FoodCartEntity fCart : fCEntity) {
+            map.put(fCart.getItem_id().getId(), fCart.getQuantity());
         }
-        restaurantResponse.setName(restaurantname);
-        restaurantResponse.setLocation(resEntity.getRestaurant_loc());
-        restaurantResponse.setItems(itemVo);
+        List<ItemsVO> itemVOList = new ArrayList<>();
+
+        if (!CollectionUtils.isEmpty(itemsList)) {
+            for (ItemsEntity iEntity : itemsList) {
+                if (iEntity.getActive()) {
+                    ItemsVO iVO = new ItemsVO();
+                    if (map.containsKey(iEntity.getId())) {
+                        ItemsMapper.convertItemEntitytoItemVO(iEntity, iVO);
+                        iVO.setQuantity(map.get(iEntity.getId()));
+                    } else {
+                        ItemsMapper.convertItemEntitytoItemVO(iEntity, iVO);
+                    }
+                    itemVOList.add(iVO);
+                }
+            }
+            restaurantResponse.setItems(itemVOList);
+            restaurantResponse.setResVO(resVO);
+        } else {
+            restaurantResponse.setStatusCode(LitilConstants.FAILURE_CODE);
+            restaurantResponse.setStatusDesc("Restaurant Hasn't add any menu");
+        }
         return restaurantResponse;
     }
 }

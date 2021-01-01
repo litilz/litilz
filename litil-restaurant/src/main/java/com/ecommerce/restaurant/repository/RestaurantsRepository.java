@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RestaurantRepository extends JpaRepository<RestaurantsEntity, Integer> {
+public interface RestaurantsRepository extends JpaRepository<RestaurantsEntity, Integer> {
 
     @Query("SELECT r FROM RestaurantsEntity r WHERE  r.name = :name")
     RestaurantsEntity findRestaurant(String name);

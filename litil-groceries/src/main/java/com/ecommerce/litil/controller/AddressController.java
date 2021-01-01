@@ -2,7 +2,7 @@ package com.ecommerce.litil.controller;
 
 import com.ecommerce.litil.request.AddressRequest;
 import com.ecommerce.litil.response.AddressResponse;
-import com.ecommerce.litil.response.BaseResponse;
+import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.PincodeResponse;
 import com.ecommerce.litil.service.AddressService;
 import org.slf4j.Logger;

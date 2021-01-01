@@ -2,7 +2,7 @@ package com.ecommerce.litil.controller;
 
 
 import com.ecommerce.litil.request.CartRequest;
-import com.ecommerce.litil.response.BaseResponse;
+import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.CartResponse;
 import com.ecommerce.litil.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;

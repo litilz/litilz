@@ -1,29 +1,23 @@
 package com.ecommerce.restaurant.response;
 
+import com.ecommerce.repos.response.BaseResponse;
+import com.ecommerce.restaurant.entity.RestaurantsEntity;
 import com.ecommerce.restaurant.vo.ItemsVO;
+import com.ecommerce.restaurant.vo.RestaurantsVO;
 
 import java.util.List;
 
-public class RestaurantResponse {
+public class RestaurantResponse extends BaseResponse {
 
-    private String name;
-    private String location;
+    private RestaurantsVO resVO;
     private List<ItemsVO> items;
 
-    public String getName() {
-        return name;
+    public RestaurantsVO getResVO() {
+        return resVO;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setResVO(RestaurantsVO resVO) {
+        this.resVO = resVO;
     }
 
     public List<ItemsVO> getItems() {

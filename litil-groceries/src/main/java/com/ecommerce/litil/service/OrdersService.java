@@ -1,16 +1,15 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.litil.exception.LitilException;
 import com.ecommerce.litil.mapper.OrdersMapper;
 import com.ecommerce.litil.mapper.ProductMapper;
 import com.ecommerce.litil.request.OrderRequest;
-import com.ecommerce.litil.response.MediaOrderResponse;
 import com.ecommerce.litil.response.OrdersListResponse;
 import com.ecommerce.litil.response.OrdersResponse;
 import com.ecommerce.litil.vo.OrdersVO;
 import com.ecommerce.litil.vo.ProductVO;
 import com.ecommerce.repos.entity.*;
+import com.ecommerce.repos.exception.LitilException;
 import com.ecommerce.repos.repository.*;
 import com.ecommerce.repos.twilio.TwilioService;
 import com.ecommerce.repos.util.LitilConstants;
@@ -76,8 +75,8 @@ public class OrdersService {
             oVOList.add(ordersVO);
 
         }
-        MediaOrderResponse MediaOrderResponse = mediaService.getAllUserMediaOrders(user_name);
-        ordersResponse.setMediaOrdersVO(MediaOrderResponse.getMediaOrdersVO());
+//        MediaOrderResponse MediaOrderResponse = mediaService.getAllUserMediaOrders(user_name);
+//        ordersResponse.setMediaOrdersVO(MediaOrderResponse.getMediaOrdersVO());
         ordersResponse.setOrdersVO(oVOList);
         ordersResponse.setStatusCode(LitilConstants.SUCCESS_CODE);
         ordersResponse.setStatusDesc(LitilConstants.SUCCESS_DESC);
@@ -151,6 +150,7 @@ public class OrdersService {
             ProductEntity pEntity = oList.getProduct_id();
             ProductMapper.convertProductEnitytoProductVO(productVO, pEntity);
             productVO.setQuantity(oList.getQuantity());
+            productVO.setSelling(oList.getProduct_id().getSelling());
             orderedProductList.add(productVO);
         }
         ordersListResponse.setOrdersList(orderedProductList);
@@ -158,6 +158,4 @@ public class OrdersService {
         ordersListResponse.setStatusDesc(LitilConstants.SUCCESS_DESC);
         return ordersListResponse;
     }
-
-
 }

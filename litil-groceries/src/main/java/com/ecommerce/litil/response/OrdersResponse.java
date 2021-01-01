@@ -2,6 +2,7 @@ package com.ecommerce.litil.response;
 
 import com.ecommerce.litil.vo.MediaOrderVO;
 import com.ecommerce.litil.vo.OrdersVO;
+import com.ecommerce.repos.response.BaseResponse;
 
 import java.util.List;
 

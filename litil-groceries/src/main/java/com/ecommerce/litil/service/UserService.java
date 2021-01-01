@@ -1,11 +1,11 @@
 package com.ecommerce.litil.service;
 
 import com.ecommerce.repos.entity.UserEntity;
-import com.ecommerce.litil.exception.LitilException;
+import com.ecommerce.repos.exception.LitilException;
 import com.ecommerce.litil.mapper.UserMapper;
 import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.litil.request.UserRequest;
-import com.ecommerce.litil.response.BaseResponse;
+import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.UserResponse;
 import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.UserVO;

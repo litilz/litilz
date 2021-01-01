@@ -8,7 +8,7 @@ import com.ecommerce.litil.mapper.ProductMapper;
 import com.ecommerce.repos.repository.CartRepository;
 import com.ecommerce.repos.repository.ProductRepository;
 import com.ecommerce.repos.repository.UserRepository;
-import com.ecommerce.litil.response.BaseResponse;
+import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.CartResponse;
 import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.CartVO;

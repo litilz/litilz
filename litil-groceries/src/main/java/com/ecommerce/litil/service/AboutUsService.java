@@ -3,10 +3,10 @@ package com.ecommerce.litil.service;
 import com.ecommerce.litil.mapper.AboutUsMapper;
 import com.ecommerce.litil.request.AboutUSRequest;
 import com.ecommerce.litil.response.AboutUsResponse;
-import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.AboutUsVO;
 import com.ecommerce.repos.entity.AboutUsEntity;
 import com.ecommerce.repos.repository.AboutUsRepository;
+import com.ecommerce.repos.util.LitilConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

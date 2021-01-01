@@ -39,8 +39,8 @@ public class RestaurantsEntity {
     private int min_order;
 
     @Basic
-    @Column(name = "estimated_delivery")
-    private Date estimated_delivery;
+    @Column(name = "delivery_time")
+    private String delivery_time;
 
     @Basic
     @Column(name = "phone")
@@ -110,12 +110,12 @@ public class RestaurantsEntity {
         this.min_order = min_order;
     }
 
-    public Date getEstimated_delivery() {
-        return estimated_delivery;
+    public String getDelivery_time() {
+        return delivery_time;
     }
 
-    public void setEstimated_delivery(Date estimated_delivery) {
-        this.estimated_delivery = estimated_delivery;
+    public void setDelivery_time(String delivery_time) {
+        this.delivery_time = delivery_time;
     }
 
     public String getPhone() {
