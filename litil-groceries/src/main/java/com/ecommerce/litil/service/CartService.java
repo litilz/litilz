@@ -1,12 +1,12 @@
 package com.ecommerce.litil.service;
 
 
-import com.ecommerce.repos.entity.CartEntity;
-import com.ecommerce.repos.entity.ProductEntity;
+import com.ecommerce.litil.entity.ProductEntity;
+import com.ecommerce.litil.repository.CartRepository;
+import com.ecommerce.litil.entity.CartEntity;
+import com.ecommerce.litil.repository.ProductRepository;
 import com.ecommerce.repos.entity.UserEntity;
 import com.ecommerce.litil.mapper.ProductMapper;
-import com.ecommerce.repos.repository.CartRepository;
-import com.ecommerce.repos.repository.ProductRepository;
 import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.repos.response.BaseResponse;
 import com.ecommerce.litil.response.CartResponse;
@@ -74,7 +74,7 @@ public class CartService {
 
         cartEntity.forEach((c) -> {
             ProductVO productVO = new ProductVO();
-            ProductMapper.convertProductEnitytoProductVO(productVO, c.getProductid());
+            ProductMapper.convertProductEnitytoProductVO(productVO, c.getProductid ());
             productVO.setQuantity(c.getQuantity());
             productVOList.add(productVO);
         });

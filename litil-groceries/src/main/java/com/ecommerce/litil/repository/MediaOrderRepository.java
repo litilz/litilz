@@ -1,6 +1,6 @@
-package com.ecommerce.repos.repository;
+package com.ecommerce.litil.repository;
 
-import com.ecommerce.repos.entity.MediaOrderEntity;
+import com.ecommerce.litil.entity.MediaOrderEntity;
 import com.ecommerce.repos.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

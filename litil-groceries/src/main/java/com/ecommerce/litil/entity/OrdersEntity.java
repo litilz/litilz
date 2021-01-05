@@ -1,4 +1,7 @@
-package com.ecommerce.repos.entity;
+package com.ecommerce.litil.entity;
+
+import com.ecommerce.repos.entity.AddressEntity;
+import com.ecommerce.repos.entity.UserEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;

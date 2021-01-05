@@ -1,8 +1,8 @@
-package com.ecommerce.repos.repository;
+package com.ecommerce.litil.repository;
 
-import com.ecommerce.repos.entity.ProductEntity;
+import com.ecommerce.litil.entity.ProductEntity;
+import com.ecommerce.litil.entity.WishItemsEntity;
 import com.ecommerce.repos.entity.UserEntity;
-import com.ecommerce.repos.entity.WishItemsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -1,6 +1,6 @@
 package com.ecommerce.litil.controller;
 
-import com.ecommerce.repos.repository.OrdersRepository;
+import com.ecommerce.litil.repository.OrdersRepository;
 import com.ecommerce.litil.request.OrderRequest;
 import com.ecommerce.litil.response.OrdersListResponse;
 import com.ecommerce.litil.response.OrdersResponse;

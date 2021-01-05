@@ -1,16 +1,21 @@
 package com.ecommerce.litil.service;
 
-import com.ecommerce.repos.entity.CartEntity;
+
+import com.ecommerce.litil.entity.ProductEntity;
+import com.ecommerce.litil.repository.CategoryRepository;
+import com.ecommerce.litil.repository.ProductRepository;
+import com.ecommerce.litil.repository.WishRepository;
 import com.ecommerce.repos.entity.CategoryEntity;
-import com.ecommerce.repos.entity.ProductEntity;
 import com.ecommerce.repos.entity.UserEntity;
 import com.ecommerce.litil.mapper.CategoryMapper;
 import com.ecommerce.litil.mapper.ProductMapper;
-import com.ecommerce.repos.repository.*;
+import com.ecommerce.litil.entity.CartEntity;
+import com.ecommerce.litil.repository.CartRepository;
 import com.ecommerce.litil.request.CategoryRequest;
 import com.ecommerce.litil.request.ProductRequest;
 import com.ecommerce.litil.response.CategoryResponse;
 import com.ecommerce.litil.response.ProductResponse;
+import com.ecommerce.repos.repository.UserRepository;
 import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.CategoryVO;
 import com.ecommerce.litil.vo.ProductVO;

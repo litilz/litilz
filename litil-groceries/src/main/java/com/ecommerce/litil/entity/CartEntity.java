@@ -1,11 +1,11 @@
-package com.ecommerce.repos.entity;
+package com.ecommerce.litil.entity;
+
+import com.ecommerce.repos.entity.UserEntity;
 
 import javax.persistence.*;
-import java.io.Serializable;
-
 @Entity
-@Table(name = "wish_items")
-public class WishItemsEntity implements Serializable {
+@Table(name = "cart")
+public class CartEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,13 @@ public class WishItemsEntity implements Serializable {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private UserEntity user_id;
+
+
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column(name = "price")
+    private Integer price;
 
     public Integer getId() {
         return id;
@@ -46,12 +53,19 @@ public class WishItemsEntity implements Serializable {
         this.user_id = user_id;
     }
 
-    @Override
-    public String toString() {
-        return "WishItemsEntity{" +
-                "id=" + id +
-                ", productid=" + productid +
-                ", user_id=" + user_id +
-                '}';
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }

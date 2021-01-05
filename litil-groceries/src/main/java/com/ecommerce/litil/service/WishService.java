@@ -1,17 +1,17 @@
 package com.ecommerce.litil.service;
 
+import com.ecommerce.litil.entity.ProductEntity;
+import com.ecommerce.litil.entity.WishItemsEntity;
+import com.ecommerce.litil.repository.ProductRepository;
+import com.ecommerce.litil.repository.WishRepository;
 import com.ecommerce.repos.exception.LitilException;
 import com.ecommerce.litil.mapper.ProductMapper;
 import com.ecommerce.litil.request.WishRequest;
 import com.ecommerce.litil.response.WishResponse;
 import com.ecommerce.repos.util.LitilConstants;
 import com.ecommerce.litil.vo.ProductVO;
-import com.ecommerce.repos.entity.ProductEntity;
 import com.ecommerce.repos.entity.UserEntity;
-import com.ecommerce.repos.entity.WishItemsEntity;
-import com.ecommerce.repos.repository.ProductRepository;
 import com.ecommerce.repos.repository.UserRepository;
-import com.ecommerce.repos.repository.WishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

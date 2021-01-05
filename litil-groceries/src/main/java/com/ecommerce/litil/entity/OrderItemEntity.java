@@ -1,11 +1,11 @@
-package com.ecommerce.repos.entity;
-
+package com.ecommerce.litil.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "cart")
-public class CartEntity {
+@Table(name = "order_items")
+public class OrderItemEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,19 +13,19 @@ public class CartEntity {
     @Column(name = "id")
     private Integer id;
 
-
-    @JoinColumn(name = "productid", referencedColumnName = "id")
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private ProductEntity productid;
+    private OrdersEntity order_id;
 
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private UserEntity user_id;
+    private ProductEntity product_id;
 
-
+    @Basic(optional = false)
     @Column(name = "quantity")
     private Integer quantity;
 
+    @Basic(optional = false)
     @Column(name = "price")
     private Integer price;
 
@@ -37,20 +37,20 @@ public class CartEntity {
         this.id = id;
     }
 
-    public ProductEntity getProductid() {
-        return productid;
+    public OrdersEntity getOrder_id() {
+        return order_id;
     }
 
-    public void setProductid(ProductEntity productid) {
-        this.productid = productid;
+    public void setOrder_id(OrdersEntity order_id) {
+        this.order_id = order_id;
     }
 
-    public UserEntity getUser_id() {
-        return user_id;
+    public ProductEntity getProduct_id() {
+        return product_id;
     }
 
-    public void setUser_id(UserEntity user_id) {
-        this.user_id = user_id;
+    public void setProduct_id(ProductEntity product_id) {
+        this.product_id = product_id;
     }
 
     public Integer getQuantity() {
