@@ -4,7 +4,7 @@ import com.ecommerce.repos.entity.AddressEntity;
 import com.ecommerce.repos.entity.UserEntity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "food_order")
@@ -12,16 +12,15 @@ public class FoodOrdersEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
-    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private UserEntity user_id;
 
-    @JoinColumn(name = "restaurant_id",referencedColumnName = "id")
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private RestaurantsEntity restaurant_id;
 
@@ -31,7 +30,7 @@ public class FoodOrdersEntity {
     @Column(name = "ordered_items_count")
     private Integer ordered_items_count;
 
-    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private AddressEntity address_id;
 
@@ -45,13 +44,13 @@ public class FoodOrdersEntity {
     private String delivered_by;
 
     @Column(name = "delivery_charge")
-    private String delivery_charge;
+    private Integer delivery_charge;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -119,11 +118,11 @@ public class FoodOrdersEntity {
         this.delivered_by = delivered_by;
     }
 
-    public String getDelivery_charge() {
+    public Integer getDelivery_charge() {
         return delivery_charge;
     }
 
-    public void setDelivery_charge(String delivery_charge) {
+    public void setDelivery_charge(Integer delivery_charge) {
         this.delivery_charge = delivery_charge;
     }
 }

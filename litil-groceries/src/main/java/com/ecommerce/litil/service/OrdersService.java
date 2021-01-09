@@ -57,8 +57,6 @@ public class OrdersService {
     @Autowired
     TwilioService twilioService;
 
-    @Autowired
-    MediaService mediaService;
 
     Logger logger = LoggerFactory.getLogger(OrdersService.class);
 
@@ -137,7 +135,7 @@ public class OrdersService {
         ordersResponse.setStatusCode(LitilConstants.SUCCESS_CODE);
         ordersResponse.setStatusDesc(previousTime.toString());
         if (ordersResponse.getStatusCode().equals(LitilConstants.SUCCESS_CODE)) {
-            twilioService.sendDetails(orderRequest.getOrdersVO().getUser_id(), previousTime);
+            twilioService.sendDetails(orderRequest.getOrdersVO().getUser_id(), "GOid: "+previousTime);
             cartRepository.deleteById(uEntity);
         }
         return ordersResponse;

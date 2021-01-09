@@ -42,7 +42,7 @@ CREATE TABLE `items` (
 
 CREATE TABLE `user_ordered_items` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`order_id` INT NOT NULL,
+	`order_id` BIGINT  NOT NULL,
 	`item_id` INT NOT NULL,
 	`price` INT NOT NULL,
     `item_quantity` INT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `user_ordered_items` (
 
 
 CREATE TABLE `food_order` (
-	`id` INT(255) NOT NULL UNIQUE,
+	`id` BIGINT  NOT NULL UNIQUE,
 	`user_id` INT NOT NULL,
 	`restaurant_id` INT NOT NULL,
 	`grand_total` INT NOT NULL,
@@ -59,8 +59,8 @@ CREATE TABLE `food_order` (
 	`address_id` INT NOT NULL,
 	`ordered_date` DATE NOT NULL,
 	`status` varchar(255) NOT NULL,
-	`delivered_by` varchar(255) NOT NULL,
-	`delivery_charge` INT NOT NULL,
+	`delivered_by` varchar(255),
+	`delivery_charge` INT,
 	PRIMARY KEY (`id`)
 );
 

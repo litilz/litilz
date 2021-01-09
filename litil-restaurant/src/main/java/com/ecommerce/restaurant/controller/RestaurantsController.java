@@ -21,7 +21,7 @@ public class RestaurantsController {
 
     @GetMapping("/{restaurantName}")
     public RestaurantResponse displayMenu(@PathVariable("restaurantName") String restaurantName, @RequestParam(name = "user_name", required = true) String user_name) {
-        return restaurantsService.displayMenu(restaurantName,user_name);
+        return restaurantsService.displayMenu(restaurantName, user_name);
     }
 
 

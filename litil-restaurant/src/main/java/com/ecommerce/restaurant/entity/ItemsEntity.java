@@ -34,7 +34,7 @@ public class ItemsEntity {
     @Column(name = "active")
     private Boolean active;
 
-    @JoinColumn(name = "restaurant_id",referencedColumnName = "id")
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private RestaurantsEntity restaurant_id;
 

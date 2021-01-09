@@ -1,25 +1,14 @@
-package com.ecommerce.restaurant.vo;
-
-import com.ecommerce.restaurant.entity.RestaurantsEntity;
-
-public class FoodOrdersVO {
-
-    private OrderDetailsVO orderDetailsVO;
-    private RestaurantsEntity resEntity;
-
-    public RestaurantsEntity getResEntity() {
-        return resEntity;
-    }
-
-    public void setResEntity(RestaurantsEntity resEntity) {
-        this.resEntity = resEntity;
-    }
-
-    public OrderDetailsVO getOrderDetailsVO() {
-        return orderDetailsVO;
-    }
-
-    public void setOrderDetailsVO(OrderDetailsVO orderDetailsVO) {
-        this.orderDetailsVO = orderDetailsVO;
-    }
-}
+//package com.ecommerce.restaurant.vo;
+//
+//public class FoodOrdersVO {
+//
+//    private OrderResponseVO orderResponseVO;
+//
+//    public OrderResponseVO getOrderResponseVO() {
+//        return orderResponseVO;
+//    }
+//
+//    public void setOrderResponseVO(OrderResponseVO orderResponseVO) {
+//        this.orderResponseVO = orderResponseVO;
+//    }
+//}

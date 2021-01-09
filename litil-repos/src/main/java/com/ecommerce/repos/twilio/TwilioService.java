@@ -10,7 +10,7 @@ public class TwilioService {
     @Autowired
     TwilioSmsSender twilioSmsSender;
 
-    public String sendDetails(String user_id, Long order_id) {
+    public String sendDetails(String user_id, String order_id) {
         TwilioSmsRequest twilioSmsRequest = new TwilioSmsRequest();
         twilioSmsRequest.setPhone_no("+918328678447");
         String msg = "new order received with order_id:" + order_id + ", ordered by " + user_id + ".";

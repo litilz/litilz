@@ -1,8 +1,6 @@
 package com.ecommerce.restaurant.vo;
 
 
-import java.sql.Date;
-
 public class RestaurantsVO {
     private int id;
     private String image;

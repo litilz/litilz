@@ -2,7 +2,6 @@ package com.ecommerce.restaurant.entity;
 
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Table(name = "restaurants")

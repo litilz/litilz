@@ -22,11 +22,11 @@ public class FoodCartEntity {
 
     @JoinColumn(name = "item_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private  ItemsEntity item_id;
+    private ItemsEntity item_id;
 
 
     @Column(name = "quantity")
-    private  int quantity;
+    private int quantity;
 
     public int getId() {
         return id;

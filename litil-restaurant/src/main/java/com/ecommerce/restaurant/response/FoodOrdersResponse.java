@@ -1,16 +1,22 @@
 package com.ecommerce.restaurant.response;
 
 import com.ecommerce.repos.response.BaseResponse;
-import com.ecommerce.restaurant.vo.FoodOrdersVO;
+import com.ecommerce.restaurant.vo.OrderResponseVO;
+
+import java.util.List;
 
 public class FoodOrdersResponse extends BaseResponse {
-    private FoodOrdersVO foodOrdersVO;
 
-    public FoodOrdersVO getFoodOrdersVO() {
-        return foodOrdersVO;
+    private List<OrderResponseVO> orderResponseVOList;
+
+
+    public List<OrderResponseVO> getOrderResponseVOList() {
+        return orderResponseVOList;
     }
 
-    public void setFoodOrdersVO(FoodOrdersVO foodOrdersVO) {
-        this.foodOrdersVO = foodOrdersVO;
+    public void setOrderResponseVOList(List<OrderResponseVO> orderResponseVOList) {
+        this.orderResponseVOList = orderResponseVOList;
     }
+
+
 }

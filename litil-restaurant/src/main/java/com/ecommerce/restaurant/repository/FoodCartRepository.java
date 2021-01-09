@@ -31,7 +31,7 @@ public interface FoodCartRepository extends JpaRepository<FoodCartEntity, Intege
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query("update FoodCartEntity c set c.quantity = c.quantity+1 WHERE c.user_id = :user_id and c.item_id = :item_id")
-    void increment(@Param("user_id") UserEntity user_id,@Param("item_id") ItemsEntity item_id);
+    void increment(@Param("user_id") UserEntity user_id, @Param("item_id") ItemsEntity item_id);
 
     @Transactional
     @Modifying(clearAutomatically = true)

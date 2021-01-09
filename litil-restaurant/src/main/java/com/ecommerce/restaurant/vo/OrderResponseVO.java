@@ -1,15 +1,20 @@
 package com.ecommerce.restaurant.vo;
 
-import java.sql.Date;
+import com.ecommerce.repos.entity.AddressEntity;
 
-public class OrderDetailsVO {
+import java.util.Date;
+
+public class OrderResponseVO {
     private Long id;
-    private String status;
+    private String userName;
+    private String restaurantName;
     private Integer grand_total;
     private Integer ordered_items_count;
+    private AddressEntity addressEntity;
     private Date ordered_date;
+    private String status;
     private String delivered_by;
-    private String delivery_charge;
+    private Integer delivery_charge;
 
     public Long getId() {
         return id;
@@ -19,12 +24,20 @@ public class OrderDetailsVO {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
     }
 
     public Integer getGrand_total() {
@@ -43,12 +56,29 @@ public class OrderDetailsVO {
         this.ordered_items_count = ordered_items_count;
     }
 
+
+    public AddressEntity getAddressEntity() {
+        return addressEntity;
+    }
+
+    public void setAddressEntity(AddressEntity addressEntity) {
+        this.addressEntity = addressEntity;
+    }
+
     public Date getOrdered_date() {
         return ordered_date;
     }
 
     public void setOrdered_date(Date ordered_date) {
         this.ordered_date = ordered_date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDelivered_by() {
@@ -59,11 +89,13 @@ public class OrderDetailsVO {
         this.delivered_by = delivered_by;
     }
 
-    public String getDelivery_charge() {
+    public Integer getDelivery_charge() {
         return delivery_charge;
     }
 
-    public void setDelivery_charge(String delivery_charge) {
+    public void setDelivery_charge(Integer delivery_charge) {
         this.delivery_charge = delivery_charge;
     }
+
+
 }

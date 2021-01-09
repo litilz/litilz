@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FoodOrdersRepository extends JpaRepository<FoodOrdersEntity,Double> {
+public interface FoodOrdersRepository extends JpaRepository<FoodOrdersEntity, Long> {
 
-    @Query("SELECT o FROM OrdersEntity o WHERE o.user_id = :user_id")
+    @Query("SELECT o FROM FoodOrdersEntity o WHERE o.user_id = :user_id")
     List<FoodOrdersEntity> findByUser(UserEntity user_id);
 }

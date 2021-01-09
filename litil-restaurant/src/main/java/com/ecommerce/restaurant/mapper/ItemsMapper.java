@@ -7,7 +7,6 @@ import org.springframework.beans.BeanUtils;
 public class ItemsMapper {
 
     public static void convertItemEntitytoItemVO(ItemsEntity itemsEntity, ItemsVO itemsVO) {
-
         BeanUtils.copyProperties(itemsEntity, itemsVO);
     }
 }

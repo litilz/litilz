@@ -13,11 +13,11 @@ public class OrderedFoodItemsEntity {
     @Column(name = "id")
     private Integer id;
 
-    @JoinColumn(name = "order_id",referencedColumnName = "id")
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private FoodOrdersEntity order_id;
 
-    @JoinColumn(name = "item_id",referencedColumnName = "id")
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private ItemsEntity item_id;
 

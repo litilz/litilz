@@ -14,7 +14,7 @@ public class TwilioController {
 
 
     @PostMapping
-    public String sendDetails(@RequestParam("user_id") String user_id, @RequestParam("order_id") Long order_id) {
+    public String sendDetails(@RequestParam("user_id") String user_id, @RequestParam("order_id") String order_id) {
         return twilioService.sendDetails(user_id, order_id);
     }
 
