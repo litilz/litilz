@@ -11,16 +11,6 @@ public class OrdersResponse extends BaseResponse {
 
     private List<OrdersVO> ordersVO;
 
-    private List<MediaOrderVO> mediaOrdersVO;
-
-    public List<MediaOrderVO> getMediaOrdersVO() {
-        return mediaOrdersVO;
-    }
-
-    public void setMediaOrdersVO(List<MediaOrderVO> mediaOrdersVO) {
-        this.mediaOrdersVO = mediaOrdersVO;
-    }
-
     public List<OrdersVO> getOrdersVO() {
         return ordersVO;
     }

@@ -18,11 +18,11 @@ import org.springframework.web.client.RestTemplate;
 @Import(value = {RestTemplate.class})
 public class LitilApplication {
 
-	private static final Logger logger = LoggerFactory.getLogger(LitilApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(LitilApplication.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(LitilApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(LitilApplication.class, args);
+    }
 
 
 }

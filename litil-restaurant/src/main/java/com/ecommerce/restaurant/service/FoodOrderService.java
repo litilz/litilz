@@ -75,7 +75,8 @@ public class FoodOrderService {
         foodOrdersEntity.setUser_id(uEntity);
         foodOrdersEntity.setRestaurant_id(rEntity);
         foodOrdersEntity.setOrdered_items_count(fCartEntity.size());
-        foodOrdersEntity.setStatus("Ordered");
+        foodOrdersEntity.setStatus(LitilConstants.ORDERED);
+        foodOrdersEntity.setPayment_mode(LitilConstants.COD);
         foodOrdersEntity.setOrdered_date(now);
         foodOrdersEntity.setGrand_total(orderRequestVO.getGrand_total());
         foodOrdersRepository.save(foodOrdersEntity);
@@ -94,8 +95,7 @@ public class FoodOrderService {
         orderedFoodItemsRepository.saveAll(orderFoodItemsList);
         foodCartRepository.clearCart(uEntity);
         baseResponse.setStatusCode(LitilConstants.SUCCESS_CODE);
-        baseResponse.setStatusDesc(LitilConstants.SUCCESS_DESC);
-        baseResponse.setObject("FOid: " + previousTime);
+        baseResponse.setStatusDesc(previousTime.toString());
         twilioService.sendDetails(orderRequestVO.getUserName(),"FOid: "+ previousTime);
         return baseResponse;
     }

@@ -5,10 +5,15 @@
 	<parent>
 		<groupId>com.litil.enterprise</groupId>
 		<artifactId>litil</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>litil-groceries</artifactId>
 	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

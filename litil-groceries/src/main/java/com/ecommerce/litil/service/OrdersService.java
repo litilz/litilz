@@ -80,8 +80,6 @@ public class OrdersService {
             oVOList.add(ordersVO);
 
         }
-//        MediaOrderResponse MediaOrderResponse = mediaService.getAllUserMediaOrders(user_name);
-//        ordersResponse.setMediaOrdersVO(MediaOrderResponse.getMediaOrdersVO());
         ordersResponse.setOrdersVO(oVOList);
         ordersResponse.setStatusCode(LitilConstants.SUCCESS_CODE);
         ordersResponse.setStatusDesc(LitilConstants.SUCCESS_DESC);
@@ -135,7 +133,7 @@ public class OrdersService {
         ordersResponse.setStatusCode(LitilConstants.SUCCESS_CODE);
         ordersResponse.setStatusDesc(previousTime.toString());
         if (ordersResponse.getStatusCode().equals(LitilConstants.SUCCESS_CODE)) {
-            twilioService.sendDetails(orderRequest.getOrdersVO().getUser_id(), "GOid: "+previousTime);
+            twilioService.sendDetails(orderRequest.getOrdersVO().getUser_id(), "GOid : " + previousTime);
             cartRepository.deleteById(uEntity);
         }
         return ordersResponse;

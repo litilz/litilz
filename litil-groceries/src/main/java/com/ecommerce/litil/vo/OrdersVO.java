@@ -15,11 +15,11 @@ public class OrdersVO {
     private String date_ordered;
     private int quantity;
 
-    public int getQuantity () {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity ( int quantity ) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

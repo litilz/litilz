@@ -74,7 +74,7 @@ public class CartService {
 
         cartEntity.forEach((c) -> {
             ProductVO productVO = new ProductVO();
-            ProductMapper.convertProductEnitytoProductVO(productVO, c.getProductid ());
+            ProductMapper.convertProductEnitytoProductVO(productVO, c.getProductid());
             productVO.setQuantity(c.getQuantity());
             productVOList.add(productVO);
         });

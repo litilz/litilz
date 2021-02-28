@@ -13,4 +13,8 @@ public class LitilConstants {
 
     public final static String ORDERED = "Ordered";
 
+    public final static String COD = "COD";
+
+    public final static String UPI = "UPI";
+
 }

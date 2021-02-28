@@ -54,14 +54,15 @@ public class FoodCartService {
                 fEntity.setUser_id(uEntity);
                 fEntity.setQuantity(1);
                 foodCartRepository.save(fEntity);
-            } else if (fEntity != null && fEntity.getItem_id().getRestaurant_id().getName().equals(foodCartVO.getRestaurant_name())) {
+            } else if (iEntity.getRestaurant_id().getId() == fCEntity.get(0).getItem_id().getRestaurant_id().getId()) {
                 if (fEntity != null) {
                     foodCartRepository.increment(uEntity, iEntity);
                 } else {
-                    fEntity.setItem_id(iEntity);
-                    fEntity.setUser_id(uEntity);
-                    fEntity.setQuantity(1);
-                    foodCartRepository.save(fEntity);
+                    FoodCartEntity updatingCart = new FoodCartEntity();
+                    updatingCart.setItem_id(iEntity);
+                    updatingCart.setUser_id(uEntity);
+                    updatingCart.setQuantity(1);
+                    foodCartRepository.save(updatingCart);
                 }
             } else {
                 clearCart(uEntity);

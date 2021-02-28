@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 //@Repository
-public interface CategoryRepository extends JpaRepository <CategoryEntity, Integer> {
+public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer> {
 
     @Query("SELECT ce FROM CategoryEntity ce")
-    List <CategoryEntity> findAllCategory();
+    List<CategoryEntity> findAllCategory();
 
 }

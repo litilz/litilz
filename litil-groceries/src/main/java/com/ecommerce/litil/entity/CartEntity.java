@@ -3,6 +3,7 @@ package com.ecommerce.litil.entity;
 import com.ecommerce.repos.entity.UserEntity;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name = "cart")
 public class CartEntity {

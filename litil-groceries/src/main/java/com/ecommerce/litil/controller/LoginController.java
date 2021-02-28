@@ -36,27 +36,27 @@ public class LoginController {
 
     @PostMapping("/verify")
     public BaseResponse verifyOtp(@RequestBody VerifyRequest request) {
-        BaseResponse baseResponse = new BaseResponse ();
+        BaseResponse baseResponse = new BaseResponse();
         if (request.getOtp().equals(InMemoryUserOtp.getInstance().get(request.getPhone()))) {
             InMemoryUserOtp.getInstance().remove(request.getPhone());
             return userService.getUserByPhone(request.getPhone());
         }
-        baseResponse.setStatusCode ( HttpStatus.BAD_REQUEST.name () );
-        baseResponse.setStatusDesc ( "Invalid Otp" );
-        return  baseResponse;
+        baseResponse.setStatusCode(HttpStatus.BAD_REQUEST.name());
+        baseResponse.setStatusDesc("Invalid Otp");
+        return baseResponse;
     }
 
 
     @PostMapping("/login")
     public BaseResponse loginWithPhone(@RequestBody LoginRequest loginRequest) {
-        BaseResponse baseResponse = new BaseResponse ();
+        BaseResponse baseResponse = new BaseResponse();
         if (loginRequest.getPhoneNumber() != null && !loginRequest.getPhoneNumber().isEmpty()) {
-            MessageResponse response =  messagingService.sendSMS(loginRequest);
-            baseResponse.setStatusCode ( response.getResponseEntity ().getStatusCode ().name () );
-            baseResponse.setStatusDesc ( "OTP Sent Successfully" );
+            MessageResponse response = messagingService.sendSMS(loginRequest);
+            baseResponse.setStatusCode(response.getResponseEntity().getStatusCode().name());
+            baseResponse.setStatusDesc("OTP Sent Successfully");
         } else {
-            baseResponse.setStatusCode (HttpStatus.BAD_REQUEST.name ()  );
-            baseResponse.setStatusDesc ( "Please enter a valid phone number" );
+            baseResponse.setStatusCode(HttpStatus.BAD_REQUEST.name());
+            baseResponse.setStatusDesc("Please enter a valid phone number");
         }
         return baseResponse;
     }

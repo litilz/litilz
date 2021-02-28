@@ -13,11 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public interface CartRepository extends JpaRepository <CartEntity, Integer> {
+public interface CartRepository extends JpaRepository<CartEntity, Integer> {
 
 
     @Query("SELECT c FROM CartEntity c WHERE c.productid = :productid and c.user_id = :user_id")
-    CartEntity find( @Param("user_id") UserEntity user_id, @Param("productid") ProductEntity productid);
+    CartEntity find(@Param("user_id") UserEntity user_id, @Param("productid") ProductEntity productid);
 
     @Transactional
     @Modifying
@@ -30,7 +30,7 @@ public interface CartRepository extends JpaRepository <CartEntity, Integer> {
     void decrement(@Param("user_id") UserEntity user_id, @Param("productid") ProductEntity productid);
 
     @Query("SELECT c FROM CartEntity c WHERE  c.user_id = :user_id")
-    List <CartEntity> findAll( @Param("user_id") UserEntity user_id);
+    List<CartEntity> findAll(@Param("user_id") UserEntity user_id);
 
     @Transactional
     @Modifying(clearAutomatically = true)

@@ -38,7 +38,7 @@ public class AddressController {
     public BaseResponse deleteAddress(@RequestParam(name = "id", required = true) Integer id) {
         return addressService.deleteAddress(id);
     }
-    
+
     @PostMapping(value = "/updateAddress")
     public AddressResponse updateAddress(@RequestBody AddressRequest addressRequest) {
         return addressService.updateAddress(addressRequest);

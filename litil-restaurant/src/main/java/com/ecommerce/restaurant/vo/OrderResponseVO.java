@@ -15,6 +15,7 @@ public class OrderResponseVO {
     private String status;
     private String delivered_by;
     private Integer delivery_charge;
+    private String payment_mode;
 
     public Long getId() {
         return id;
@@ -97,5 +98,11 @@ public class OrderResponseVO {
         this.delivery_charge = delivery_charge;
     }
 
+    public String getPayment_mode() {
+        return payment_mode;
+    }
 
+    public void setPayment_mode(String payment_mode) {
+        this.payment_mode = payment_mode;
+    }
 }
