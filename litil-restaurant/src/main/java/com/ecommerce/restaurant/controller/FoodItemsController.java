@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/getItems")
+@RestController("/")
 public class FoodItemsController {
 
     @Autowired
     ItemsService itemsService;
 
 
-    @GetMapping("/")
+    @GetMapping("/items")
     public List<ItemsEntity> getItems() {
         return itemsService.getItems();
     }
